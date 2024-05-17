@@ -10,7 +10,10 @@ import re
 import streamlit as st
 import streamlit.components.v1 as components
 import markdown
-client = OpenAI()
+client = OpenAI(
+    base_url = 'http://localhost:11434/v1',
+    api_key='ollama', # required, but unused
+)
 
 # Custom component to call AnkiConnect on client side
 parent_dir = os.path.dirname(os.path.abspath(__file__))
