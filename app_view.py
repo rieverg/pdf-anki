@@ -9,7 +9,10 @@ from streamlit_cropper import st_cropper
 from PIL import Image
 import openai
 from openai import OpenAI
-client = OpenAI()
+client = OpenAI(
+    base_url = 'http://localhost:11434/v1',
+    api_key='ollama', # required, but unused
+)
 
 class AppView:
     def __init__(self, actions):
