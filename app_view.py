@@ -55,7 +55,7 @@ class AppView:
                 # if "fine_tuning" in st.session_state and st.session_state["fine_tuning"] == True:
                 #     st.session_state["model"] = "ft:gpt-3.5-turbo-0125:personal:pdf-anki-new:9O0JdsS2"
                 # else:
-                st.session_state["model"] = "gpt-3.5-turbo"
+                st.session_state["model"] = "llama3"
 
                 api_key.empty()
                 api_key_text.empty()
