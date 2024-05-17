@@ -48,7 +48,7 @@ class Actions:
 
         try:
             completion = client.chat.completions.create(
-            model="llama2",
+            model="llama3",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": f"Return in one word the language of this text: {text}"}
