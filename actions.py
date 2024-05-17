@@ -57,20 +57,20 @@ class Actions:
             )
         
 
-        except openai.APIError as e:
-            st.warning(f"OpenAI API returned an API Error:\n\n{str(e)}\n\n**Refresh the page and try again**")
-            st.session_state["openai_error"] = e
-            st.stop()
-        except openai.APIConnectionError as e:
-            st.warning(f"Failed to connect to OpenAI API:\n\n{str(e)}\n\n**Refresh the page and try again**")
-            st.session_state["openai_error"] = e
-            st.stop()
-        except openai.RateLimitError as e:
-            st.warning(f"OpenAI API request exceeded rate limit::\n\n{str(e)}\n\n**Fix the problem, refresh the page and try again**")
-            st.session_state["openai_error"] = e
-            st.stop()
+        #except openai.APIError as e:
+        #    st.warning(f"OpenAI API returned an API Error:\n\n{str(e)}\n\n**Refresh the page and try again**")
+         #   st.session_state["openai_error"] = e
+          #  st.stop()
+      #  except openai.APIConnectionError as e:
+       #     st.warning(f"Failed to connect to OpenAI API:\n\n{str(e)}\n\n**Refresh the page and try again**")
+        #    st.session_state["openai_error"] = e
+         #   st.stop()
+        #except openai.RateLimitError as e:
+         #   st.warning(f"OpenAI API request exceeded rate limit::\n\n{str(e)}\n\n**Fix the problem, refresh the page and try again**")
+          #  st.session_state["openai_error"] = e
+           # st.stop()
 
-        return completion.choices[0].message.content
+        return response.choices[0].message.content
 
     def send_to_gpt(self, page, image = None):
         # TODO: Check token count and send several pages, if possible
