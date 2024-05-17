@@ -11,7 +11,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import markdown
 client = OpenAI(
-    base_url = 'http://localhost:11434/v1',
+    base_url = 'http://localhost:11434',
     api_key='ollama', # required, but unused
 )
 
