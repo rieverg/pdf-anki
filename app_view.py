@@ -11,7 +11,7 @@ import openai
 from openai import OpenAI
 
 client = OpenAI(
-    base_url = 'http://localhost:11434/v1',
+    base_url = 'http://localhost:11434',
     api_key='ollama', # required, but unused
 )
 
