@@ -16,7 +16,7 @@ async function addFlashcard(deck: string, front: string, back: string, tags: str
       options: { allowDuplicate: false },
       tags: [tags],
     };
-    const addNoteResponse = await fetch('http://localhost:8765', {
+    const addNoteResponse = await fetch('http://localhost:11434', {
       method: 'POST',
       body: JSON.stringify({
         action: 'addNote',
@@ -50,7 +50,7 @@ async function addFlashcardWithImage(deck: string, image: Uint8Array, front: str
         fields: [ "Back" ]
       }]
     };
-    const addNoteResponse = await fetch('http://localhost:8765', {
+    const addNoteResponse = await fetch('http://localhost:11434', {
       method: 'POST',
       body: JSON.stringify({
         action: 'addNote',
@@ -70,7 +70,7 @@ async function addFlashcardWithImage(deck: string, image: Uint8Array, front: str
 async function reqPerm() {
   try {
     // Add the note to the deck
-    const reqPermResponse = await fetch('http://localhost:8765', {
+    const reqPermResponse = await fetch('http://localhost:11434', {
       method: 'POST',
       body: JSON.stringify({
         action: 'requestPermission',
@@ -88,7 +88,7 @@ async function reqPerm() {
 async function checkModelExistence() {
   try {
     // Add the note to the deck
-    const checkModelExistence = await fetch('http://localhost:8765', {
+    const checkModelExistence = await fetch('http://localhost:11434', {
       method: 'POST',
       body: JSON.stringify({
         action: 'modelNames',
@@ -98,7 +98,7 @@ async function checkModelExistence() {
 
     const jsonResponse = await checkModelExistence.json();
     if (!jsonResponse.result.includes("PDF-Anki-Note")) {
-      const createModel = await fetch('http://localhost:8765', {
+      const createModel = await fetch('http://localhost:11434', {
       method: 'POST',
       body: JSON.stringify({
         action: "createModel",
@@ -130,7 +130,7 @@ async function checkModelExistence() {
 async function getDecks() {
   try {
     // Add the note to the deck
-    const getDecksResponse = await fetch('http://localhost:8765', {
+    const getDecksResponse = await fetch('http://localhost:11434', {
       method: 'POST',
       body: JSON.stringify({
         action: 'deckNames',
